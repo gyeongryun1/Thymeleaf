@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> SpringEL 표현식</h1>
+    <ul> <b>Object</b>
+        <li>${user.username} = <span th:text="${user.username}"></span> </li>
+        <li>${user['username'] = <span th:text="${user['username']}"></span> </li>
+        <li>${user.getUsername() = <span th:text="${user.getUsername()}"></span> </li>
+    </ul>
+
+    <ul> <b>List</b>
+        <li>${users[0].username} = <span th:text="${users[0].username}"></span> </li>
+        <li>${user[0]['username'] = <span th:text="${users[0]['username']}"></span> </li>
+        <li>${user[0].getUsername() = <span th:text="${users[0].getUsername()}"></span> </li>
+    </ul>
+
+  <ul> <b>Map</b>
+        <li>${userMap['userA'].username} = <span th:text="${userMap['userA'].username}"></span> </li>
+        <li>${userMap['userA']['username'] = <span th:text="${userMap['userA']['username']}"></span> </li>
+        <li>${userMap['userA'].getUsername() = <span th:text="${userMap['userA'].getUsername()}"></span> </li>
+    </ul>
+
+<h1>지역 변수 (th:with="variable = value")</h1>
+    <div th:with="variable=${users[1]}">
+        <p th:text="${variable.username}"> </p>
+    </div>
+
+    <br/>
+    <a href="/">Home</a>
+
+</body>
+</html>
