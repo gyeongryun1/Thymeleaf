@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="//www.thymeleaf.org">
+
+<footer th:fragment="fragmentName">
+    푸터 자리입니다.
+</footer>
+
+<footer th:fragment="fragmentParam (param1, param2)">
+        <p>파라미터 자리 입니다</p>
+        <p th:text="${param1}"></p>
+        <p th:text="${param2}"></p>
+</footer>
+
